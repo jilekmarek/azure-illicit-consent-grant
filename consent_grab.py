@@ -343,6 +343,8 @@ def main(argv=None) -> int:
 
     save_last_scope(args.scope)
 
+    consent_url = authorize_url()
+
     banner = f"""
 ======================================================================
   Azure Illicit Consent Grant - Demonstrator
@@ -356,6 +358,9 @@ def main(argv=None) -> int:
   Listening on .. http://{CFG.host}:{CFG.port}
   Lure (landing)  {CFG.public_url}/
   Direct consent  {CFG.public_url}/go
+----------------------------------------------------------------------
+  Consent URL:
+  {consent_url}
 ======================================================================
 """
     print(banner)
